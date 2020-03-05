@@ -2,7 +2,7 @@
 
 namespace calc_pressure_losses_along_len.Physics
 {
-    public class PressureLossObj
+    public class PressureLoss
     {
         private readonly double hydraulicPressureCoefficient;
         private readonly double pipelineLength;
@@ -10,9 +10,9 @@ namespace calc_pressure_losses_along_len.Physics
         private readonly double averageFlowRate;
         private readonly double fluidDensity;
 
-        private readonly double pressureLoss;
+        private readonly double val;
 
-        public PressureLossObj(
+        public PressureLoss(
             double hydraulicPressureCoefficient,
             double pipelineLength,
             double pipelineInnerDiameter,
@@ -25,7 +25,7 @@ namespace calc_pressure_losses_along_len.Physics
             this.averageFlowRate = averageFlowRate;
             this.fluidDensity = fluidDensity;
 
-            pressureLoss =
+            val =
                 hydraulicPressureCoefficient *
                 (pipelineLength / pipelineInnerDiameter) *
                 (Math.Pow(averageFlowRate, 2) / 2) *
@@ -72,11 +72,11 @@ namespace calc_pressure_losses_along_len.Physics
             }
         }
 
-        public double PressureLoss
+        public double Value
         {
             get
             {
-                return pressureLoss;
+                return val;
             }
         }
     }
