@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Physics\AverageFlowRate.cs" />
+    <Compile Include="Physics\HydraulicFrictionCoefficient.cs" />
     <Compile Include="Physics\PressureLoss.cs" />
     <Compile Include="Physics\ReynoldsNumber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

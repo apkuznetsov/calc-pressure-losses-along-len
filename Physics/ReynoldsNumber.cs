@@ -41,7 +41,7 @@
             }
         }
 
-        private double Value
+        public double Value
         {
             get
             {
