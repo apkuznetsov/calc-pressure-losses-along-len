@@ -7,59 +7,71 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <StackPanel>
-        <Label x:Name="labelPipelineInnerDiameter" 
+    <Window.DataContext>
+        <local:ViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <StackPanel>
+            <Label x:Name="labelPipelineInnerDiameter" 
                Margin="15, 0, 0, 0"
                Content="Внутренний диаметр трубопровода, м:"/>
 
-        <TextBox x:Name="tbPipelineInnerDiameter" 
-                 Height="23"  
+            <TextBox x:Name="tbPipelineInnerDiameter" 
+                 Height="Auto"  
                  Margin="20, 0, 20, 0" 
                  TextWrapping="Wrap"/>
 
-        <Label x:Name="labelPipelineLength"
+            <Label x:Name="labelPipelineLength"
                Margin="15, 0, 0, 0"
                Content="Длина трубопровода, м:"/>
 
-        <TextBox x:Name="tbPipelineLength" 
-                 Height="23" 
+            <TextBox x:Name="tbPipelineLength" 
+                 Height="Auto" 
                  Margin="20, 0, 20, 0" 
                  TextWrapping="Wrap"/>
 
-        <Label x:Name="labelPipelineFluidFlow"
+            <Label x:Name="labelPipelineFluidFlow"
                Margin="15, 0, 0, 0"
                Content="Расход, куб.м/с:"/>
 
-        <TextBox x:Name="tbPipelineFluidFlow" 
-                 Height="23" 
+            <TextBox x:Name="tbPipelineFluidFlow" 
+                 Height="Auto" 
                  Margin="20, 0, 20, 0" 
                  TextWrapping="Wrap"/>
 
-        <Label x:Name="labelKinematicViscosityCoefficient"
+            <Label x:Name="labelKinematicViscosityCoefficient"
                Margin="15, 0, 0, 0"
                Content="Кинематическая вязкость жидкости, кв.м/с:"/>
 
-        <TextBox x:Name="tbKinematicViscosityCoefficient" 
-                 Margin="20, 0, 20, 0" 
-                 Height="23" 
+            <TextBox x:Name="tbKinematicViscosityCoefficient" 
+                 Height="Auto"
+                 Margin="20, 0, 20, 0"
                  TextWrapping="Wrap"/>
 
-        <Label x:Name="labelEquivalentRoughness"
+            <Label x:Name="labelEquivalentRoughness"
                Margin="15, 0, 0, 0"
                Content="Эквивалентная шероховатость трубопровода, м:"/>
 
-        <TextBox x:Name="tbEquivalentRoughness" 
-                 Height="23" 
+            <TextBox x:Name="tbEquivalentRoughness" 
+                 Height="Auto" 
                  Margin="20, 0, 20, 0" 
                  TextWrapping="Wrap"/>
 
-        <Label x:Name="labelFluidDensity"
+            <Label x:Name="labelFluidDensity"
                Margin="15, 0, 0, 0"
                Content="Плотность жидкости, кг/куб.м:"/>
 
-        <TextBox x:Name="tbFluidDensity" 
-                 Height="23" 
+            <TextBox x:Name="tbFluidDensity" 
+                 Height="Auto" 
                  Margin="20, 0, 20, 0" 
                  TextWrapping="Wrap"/>
-    </StackPanel>
+        </StackPanel>
+
+        <Button x:Name="btnCalc" 
+                VerticalAlignment="Bottom"
+                Height="Auto" 
+                Margin="20" 
+                Content="Рассчитать"/>
+    </Grid>
 </Window>
