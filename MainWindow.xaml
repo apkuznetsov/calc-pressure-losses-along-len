@@ -6,36 +6,60 @@
         xmlns:local="clr-namespace:calc_pressure_losses_along_len"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="LayoutRoot" Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <TextBlock x:Name="textBlock" Grid.Column="0" Grid.ColumnSpan="4" />
-        <Button Grid.Column="0" Grid.Row="1">1</Button>
-        <Button Grid.Column="1" Grid.Row="1">2</Button>
-        <Button Grid.Column="2" Grid.Row="1">3</Button>
-        <Button Grid.Column="3" Grid.Row="1">4</Button>
-        <Button Grid.Column="0" Grid.Row="2">5</Button>
-        <Button Grid.Column="1" Grid.Row="2">6</Button>
-        <Button Grid.Column="2" Grid.Row="2">7</Button>
-        <Button Grid.Column="3" Grid.Row="2">8</Button>
-        <Button Grid.Column="0" Grid.Row="3">9</Button>
-        <Button Grid.Column="1" Grid.Row="3">0</Button>
-        <Button Grid.Column="2" Grid.Row="3">+</Button>
-        <Button Grid.Column="3" Grid.Row="3">-</Button>
-        <Button Grid.Column="0" Grid.Row="4">*</Button>
-        <Button Grid.Column="1" Grid.Row="4">/</Button>
-        <Button Grid.Column="2" Grid.Row="4">=</Button>
-        <Button Grid.Column="3" Grid.Row="4">CLEAR</Button>
-    </Grid>
+
+    <StackPanel>
+        <Label x:Name="labelPipelineInnerDiameter" 
+               Margin="15, 0, 0, 0"
+               Content="Внутренний диаметр трубопровода, м:"/>
+
+        <TextBox x:Name="tbPipelineInnerDiameter" 
+                 Height="23"  
+                 Margin="20, 0, 20, 0" 
+                 TextWrapping="Wrap"/>
+
+        <Label x:Name="labelPipelineLength"
+               Margin="15, 0, 0, 0"
+               Content="Длина трубопровода, м:"/>
+
+        <TextBox x:Name="tbPipelineLength" 
+                 Height="23" 
+                 Margin="20, 0, 20, 0" 
+                 TextWrapping="Wrap"/>
+
+        <Label x:Name="labelPipelineFluidFlow"
+               Margin="15, 0, 0, 0"
+               Content="Расход, куб.м/с:"/>
+
+        <TextBox x:Name="tbPipelineFluidFlow" 
+                 Height="23" 
+                 Margin="20, 0, 20, 0" 
+                 TextWrapping="Wrap"/>
+
+        <Label x:Name="labelKinematicViscosityCoefficient"
+               Margin="15, 0, 0, 0"
+               Content="Кинематическая вязкость жидкости, кв.м/с:"/>
+
+        <TextBox x:Name="tbKinematicViscosityCoefficient" 
+                 Margin="20, 0, 20, 0" 
+                 Height="23" 
+                 TextWrapping="Wrap"/>
+
+        <Label x:Name="labelEquivalentRoughness"
+               Margin="15, 0, 0, 0"
+               Content="Эквивалентная шероховатость трубопровода, м:"/>
+
+        <TextBox x:Name="tbEquivalentRoughness" 
+                 Height="23" 
+                 Margin="20, 0, 20, 0" 
+                 TextWrapping="Wrap"/>
+
+        <Label x:Name="labelFluidDensity"
+               Margin="15, 0, 0, 0"
+               Content="Плотность жидкости, кг/куб.м:"/>
+
+        <TextBox x:Name="tbFluidDensity" 
+                 Height="23" 
+                 Margin="20, 0, 20, 0" 
+                 TextWrapping="Wrap"/>
+    </StackPanel>
 </Window>
