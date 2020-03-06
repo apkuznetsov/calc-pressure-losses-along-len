@@ -4,17 +4,16 @@ namespace calc_pressure_losses_along_len.Physics
 {
     public class HydraulicFrictionCoefficient
     {
+        #region константы
         public static readonly double MaxReynoldsNumberForLaminarFlow = 2000;
 
         public static readonly double MinReynoldsNumberForTransientFlow = 2000;
         public static readonly double MaxReynoldsNumberForTransientFlow = 4000;
 
         public static readonly double MinReynoldsNumberForTurbulenFlow = 4000;
+        #endregion /константы
 
         private readonly ReynoldsNumber reynoldsNumber;
-        private readonly double equivalentRoughness;
-        private readonly double pipelineInnerDiameter;
-
         private readonly double val;
 
         public HydraulicFrictionCoefficient(
@@ -23,15 +22,13 @@ namespace calc_pressure_losses_along_len.Physics
             double pipelineInnerDiameter)
         {
             this.reynoldsNumber = reynoldsNumber;
-            this.equivalentRoughness = equivalentRoughness;
-            this.pipelineInnerDiameter = pipelineInnerDiameter;
 
             if (IsLaminarFlow())
                 val = CalcLaminarFlowReynoldsNumber();
             else if (IsTransientFlow())
-                val = CalcTransientFlow();
+                val = CalcTransientFlow(equivalentRoughness, pipelineInnerDiameter);
             else if (IsTurbulentFlow())
-                val = CalcTurbulentFlowReynoldsNumber();
+                val = CalcTurbulentFlowReynoldsNumber(equivalentRoughness, pipelineInnerDiameter);
             else
                 throw new ArgumentException();
         }
@@ -41,7 +38,7 @@ namespace calc_pressure_losses_along_len.Physics
             return 64 / ReynoldsNumber;
         }
 
-        private double CalcTurbulentFlowReynoldsNumber()
+        private double CalcTurbulentFlowReynoldsNumber(double equivalentRoughness, double pipelineInnerDiameter)
         {
             return
                 0.11 *
@@ -50,13 +47,13 @@ namespace calc_pressure_losses_along_len.Physics
                     0.25);
         }
 
-        private double CalcTransientFlow()
+        private double CalcTransientFlow(double equivalentRoughness, double pipelineInnerDiameter)
         {
             double arg = (Math.PI / 2) * (ReynoldsNumber / 2000 - 1);
             double sin = Math.Sin(arg);
             double ksi = Math.Pow(sin, 2);
 
-            return (1 - ksi) * CalcLaminarFlowReynoldsNumber() + ksi * CalcTurbulentFlowReynoldsNumber();
+            return (1 - ksi) * CalcLaminarFlowReynoldsNumber() + ksi * CalcTurbulentFlowReynoldsNumber(equivalentRoughness, pipelineInnerDiameter);
         }
 
         private double ReynoldsNumber

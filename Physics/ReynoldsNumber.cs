@@ -4,7 +4,10 @@
     {
         private readonly double val;
 
-        public ReynoldsNumber(double averageFlowRate, double pipelineInnerDiameter, double kinematicViscosityCoefficient)
+        public ReynoldsNumber(
+            double averageFlowRate, 
+            double pipelineInnerDiameter, 
+            double kinematicViscosityCoefficient)
         {
             double roundPipeHydraulicRadius = pipelineInnerDiameter / 4;
 
