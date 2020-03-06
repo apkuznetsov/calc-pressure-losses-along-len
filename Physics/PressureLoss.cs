@@ -26,10 +26,10 @@ namespace calc_pressure_losses_along_len.Physics
             this.fluidDensity = fluidDensity;
 
             val =
-                hydraulicPressureCoefficient *
-                (pipelineLength / pipelineInnerDiameter) *
-                (Math.Pow(averageFlowRate, 2) / 2) *
-                fluidDensity;
+                this.hydraulicPressureCoefficient *
+                (this.pipelineLength / this.pipelineInnerDiameter) *
+                (Math.Pow(this.averageFlowRate, 2) / 2) *
+                this.fluidDensity;
         }
 
         public double HydraulicPressureCoefficient

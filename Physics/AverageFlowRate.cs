@@ -15,7 +15,7 @@ namespace calc_pressure_losses_along_len.Physics
             flowSectionArea =
                 Math.PI * Math.Pow(pipelineInnerDiameter, 2) / 2;
 
-            val = pipelineFluidFlow / flowSectionArea;
+            val = this.pipelineFluidFlow / flowSectionArea;
         }
 
         public double PipelineFluidFlow
