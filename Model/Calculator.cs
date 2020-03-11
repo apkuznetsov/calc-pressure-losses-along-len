@@ -1,6 +1,8 @@
-﻿namespace calc_pressure_losses_along_len.Model
+﻿using System.ComponentModel;
+
+namespace calc_pressure_losses_along_len.Model
 {
-    public class Calculator
+    public class Calculator : INotifyPropertyChanged
     {
         private double pipelineInnerDiameter;
         private double pipelineLength;
@@ -19,6 +21,7 @@
             set
             {
                 pipelineInnerDiameter = value;
+                OnPropertyChanged(nameof(PipelineInnerDiameter));
             }
         }
 
@@ -32,6 +35,7 @@
             set
             {
                 pipelineLength = value;
+                OnPropertyChanged(nameof(PipelineLength));
             }
         }
 
@@ -45,6 +49,7 @@
             set
             {
                 pipelineFluidFlow = value;
+                OnPropertyChanged(nameof(PipelineFluidFlow));
             }
         }
 
@@ -58,6 +63,7 @@
             set
             {
                 kinematicViscosityCoefficient = value;
+                OnPropertyChanged(nameof(KinematicViscosityCoefficient));
             }
         }
 
@@ -71,6 +77,7 @@
             set
             {
                 equivalentRoughness = value;
+                OnPropertyChanged(nameof(EquivalentRoughness));
             }
         }
 
@@ -84,7 +91,16 @@
             set
             {
                 fluidDensity = value;
+                OnPropertyChanged(nameof(FluidDensity));
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
