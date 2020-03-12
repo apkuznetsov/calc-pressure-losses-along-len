@@ -70,10 +70,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Physics\AverageFlowRate.cs" />
-    <Compile Include="Model\Physics\HydraulicFrictionCoefficient.cs" />
-    <Compile Include="Model\Physics\PressureLoss.cs" />
-    <Compile Include="Model\Physics\ReynoldsNumber.cs" />
+    <Compile Include="Physics\AverageFlowRate.cs" />
+    <Compile Include="Physics\HydraulicFrictionCoefficient.cs" />
+    <Compile Include="Physics\PressureLoss.cs" />
+    <Compile Include="Physics\ReynoldsNumber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -99,6 +99,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
