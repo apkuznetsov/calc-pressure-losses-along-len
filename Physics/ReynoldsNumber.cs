@@ -5,13 +5,13 @@
         private readonly double val;
 
         public ReynoldsNumber(
-            double averageFlowRate, 
+            AverageFlowRate averageFlowRate, 
             double pipelineInnerDiameter, 
             double kinematicViscosityCoefficient)
         {
             double roundPipeHydraulicRadius = pipelineInnerDiameter / 4;
 
-            val = averageFlowRate * 4 * roundPipeHydraulicRadius / kinematicViscosityCoefficient;
+            val = averageFlowRate.Value * 4 * roundPipeHydraulicRadius / kinematicViscosityCoefficient;
         }
 
         public double Value
