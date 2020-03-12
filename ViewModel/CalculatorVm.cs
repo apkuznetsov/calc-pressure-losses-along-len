@@ -36,7 +36,7 @@ namespace calc_pressure_losses_along_len.ViewModel
 
         private void CalcPressureLoss(object obj)
         {
-            double res = PressureLossCalculation.CalcPressureLoss(
+            PressureLossCalculation pressureLossCalculation = new PressureLossCalculation(
                 PipelineFluidFlow,
                 PipelineInnerDiameter,
                 KinematicViscosityCoefficient,
@@ -44,7 +44,7 @@ namespace calc_pressure_losses_along_len.ViewModel
                 PipelineLength,
                 FluidDensity);
 
-            MessageBox.Show(res.ToString());
+            MessageBox.Show(pressureLossCalculation.ToString());
         }
 
         public double PipelineFluidFlow
