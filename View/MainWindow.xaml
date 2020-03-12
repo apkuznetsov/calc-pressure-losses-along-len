@@ -5,69 +5,76 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:calc_pressure_losses_along_len"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" >
 
     <Grid>
         <StackPanel>
             <Label x:Name="labelPipelineInnerDiameter" 
-               Margin="15, 0, 0, 0"
-               Content="Внутренний диаметр трубопровода, м:"/>
+                   Margin="15, 0, 0, 0"
+                   Content="Внутренний диаметр трубопровода, м:" />
 
             <TextBox x:Name="tbPipelineInnerDiameter" 
-                 Height="Auto"  
-                 Margin="20, 0, 20, 0" 
-                 TextWrapping="Wrap"/>
+                     Height="Auto"  
+                     Margin="20, 0, 20, 0" 
+                     TextWrapping="Wrap"
+                     Text="{Binding Path=PipelineInnerDiameter, UpdateSourceTrigger=PropertyChanged}" />
 
             <Label x:Name="labelPipelineLength"
-               Margin="15, 0, 0, 0"
-               Content="Длина трубопровода, м:"/>
+                   Margin="15, 0, 0, 0"
+                   Content="Длина трубопровода, м:" />
 
-            <TextBox x:Name="tbPipelineLength" 
-                 Height="Auto" 
-                 Margin="20, 0, 20, 0" 
-                 TextWrapping="Wrap"/>
+            <TextBox x:Name="tbPipelineLength"
+                     Height="Auto"
+                     Margin="20, 0, 20, 0" 
+                     TextWrapping="Wrap"
+                     Text="{Binding Path=PipelineLength, UpdateSourceTrigger=PropertyChanged}" />
 
             <Label x:Name="labelPipelineFluidFlow"
-               Margin="15, 0, 0, 0"
-               Content="Расход, куб.м/с:"/>
+                   Margin="15, 0, 0, 0"
+                   Content="Расход, куб.м/с:" />
 
             <TextBox x:Name="tbPipelineFluidFlow" 
-                 Height="Auto" 
-                 Margin="20, 0, 20, 0" 
-                 TextWrapping="Wrap"/>
+                     Height="Auto" 
+                     Margin="20, 0, 20, 0" 
+                     TextWrapping="Wrap"
+                     Text="{Binding Path=PipelineFluidFlow, UpdateSourceTrigger=PropertyChanged}" />
 
             <Label x:Name="labelKinematicViscosityCoefficient"
-               Margin="15, 0, 0, 0"
-               Content="Кинематическая вязкость жидкости, кв.м/с:"/>
+                   Margin="15, 0, 0, 0"
+                   Content="Кинематическая вязкость жидкости, кв.м/с:" />
 
             <TextBox x:Name="tbKinematicViscosityCoefficient" 
-                 Height="Auto"
-                 Margin="20, 0, 20, 0"
-                 TextWrapping="Wrap"/>
+                     Height="Auto"
+                     Margin="20, 0, 20, 0"
+                     TextWrapping="Wrap"
+                     Text="{Binding Path=KinematicViscosityCoefficient, UpdateSourceTrigger=PropertyChanged}" />
 
             <Label x:Name="labelEquivalentRoughness"
-               Margin="15, 0, 0, 0"
-               Content="Эквивалентная шероховатость трубопровода, м:"/>
+                   Margin="15, 0, 0, 0"
+                   Content="Эквивалентная шероховатость трубопровода, м:" />
 
             <TextBox x:Name="tbEquivalentRoughness" 
-                 Height="Auto" 
-                 Margin="20, 0, 20, 0" 
-                 TextWrapping="Wrap"/>
+                     Height="Auto" 
+                     Margin="20, 0, 20, 0" 
+                     TextWrapping="Wrap"
+                     Text="{Binding Path=EquivalentRoughness, UpdateSourceTrigger=PropertyChanged}" />
 
             <Label x:Name="labelFluidDensity"
-               Margin="15, 0, 0, 0"
-               Content="Плотность жидкости, кг/куб.м:"/>
+                   Margin="15, 0, 0, 0"
+                   Content="Плотность жидкости, кг/куб.м:" />
 
             <TextBox x:Name="tbFluidDensity" 
-                 Height="Auto" 
-                 Margin="20, 0, 20, 0" 
-                 TextWrapping="Wrap"/>
+                     Height="Auto" 
+                     Margin="20, 0, 20, 0" 
+                     TextWrapping="Wrap"
+                     Text="{Binding Path=FluidDensity, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
 
         <Button x:Name="btnCalc" 
                 VerticalAlignment="Bottom"
                 Height="Auto" 
                 Margin="20" 
-                Content="Рассчитать"/>
+                Content="Рассчитать" />
+
     </Grid>
 </Window>
