@@ -83,6 +83,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DelegateCommand.cs" />
+    <Compile Include="Dtos\EquivalentPipeRoughness.cs" />
+    <Compile Include="Dtos\KinematicViscosityCoefficients.cs" />
     <Compile Include="Physics\PressureLossCalculation.cs" />
     <Compile Include="ViewModel\CalculatorVm.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
@@ -124,9 +126,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Commands\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
