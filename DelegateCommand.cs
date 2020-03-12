@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace calc_pressure_losses_along_len.Commands
+namespace calc_pressure_losses_along_len
 {
     public class DelegateCommand : ICommand
     {
