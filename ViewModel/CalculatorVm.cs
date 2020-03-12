@@ -1,43 +1,15 @@
 ﻿using System.ComponentModel;
 
-namespace calc_pressure_losses_along_len.Model
+namespace calc_pressure_losses_along_len.ViewModel
 {
     public class Calculator : INotifyPropertyChanged
     {
-        private double pipelineInnerDiameter;
-        private double pipelineLength;
         private double pipelineFluidFlow;
+        private double pipelineInnerDiameter;
         private double kinematicViscosityCoefficient;
         private double equivalentRoughness;
+        private double pipelineLength;
         private double fluidDensity;
-
-        public double PipelineInnerDiameter
-        {
-            get
-            {
-                return pipelineInnerDiameter;
-            }
-
-            set
-            {
-                pipelineInnerDiameter = value;
-                OnPropertyChanged(nameof(PipelineInnerDiameter));
-            }
-        }
-
-        public double PipelineLength
-        {
-            get
-            {
-                return pipelineLength;
-            }
-
-            set
-            {
-                pipelineLength = value;
-                OnPropertyChanged(nameof(PipelineLength));
-            }
-        }
 
         public double PipelineFluidFlow
         {
@@ -50,6 +22,20 @@ namespace calc_pressure_losses_along_len.Model
             {
                 pipelineFluidFlow = value;
                 OnPropertyChanged(nameof(PipelineFluidFlow));
+            }
+        }
+
+        public double PipelineInnerDiameter
+        {
+            get
+            {
+                return pipelineInnerDiameter;
+            }
+
+            set
+            {
+                pipelineInnerDiameter = value;
+                OnPropertyChanged(nameof(PipelineInnerDiameter));
             }
         }
 
@@ -78,6 +64,20 @@ namespace calc_pressure_losses_along_len.Model
             {
                 equivalentRoughness = value;
                 OnPropertyChanged(nameof(EquivalentRoughness));
+            }
+        }
+
+        public double PipelineLength
+        {
+            get
+            {
+                return pipelineLength;
+            }
+
+            set
+            {
+                pipelineLength = value;
+                OnPropertyChanged(nameof(PipelineLength));
             }
         }
 
