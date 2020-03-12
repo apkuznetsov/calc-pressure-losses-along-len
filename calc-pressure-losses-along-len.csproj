@@ -63,6 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Physics\Calculations.cs" />
     <Compile Include="ViewModel\CalculatorVm.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
