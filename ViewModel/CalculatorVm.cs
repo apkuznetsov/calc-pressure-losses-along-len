@@ -1,6 +1,5 @@
 ﻿using calc_pressure_losses_along_len.Commands;
 using calc_pressure_losses_along_len.Physics;
-using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -37,7 +36,7 @@ namespace calc_pressure_losses_along_len.ViewModel
 
         private void CalcPressureLoss(object obj)
         {
-            double res = Calculations.CalcPressureLoss(
+            double res = PressureLossCalculation.CalcPressureLoss(
                 PipelineFluidFlow,
                 PipelineInnerDiameter,
                 KinematicViscosityCoefficient,

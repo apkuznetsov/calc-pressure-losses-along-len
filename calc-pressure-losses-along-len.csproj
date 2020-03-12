@@ -64,7 +64,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Commands\DelegateCommand.cs" />
-    <Compile Include="Physics\Calculations.cs" />
+    <Compile Include="Physics\PressureLossCalculation.cs" />
     <Compile Include="ViewModel\CalculatorVm.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
