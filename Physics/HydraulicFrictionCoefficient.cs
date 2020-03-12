@@ -21,7 +21,11 @@ namespace calc_pressure_losses_along_len.Physics
             double equivalentRoughness,
             double pipelineInnerDiameter)
         {
-            this.reynoldsNumber = reynoldsNumber;
+            if (equivalentRoughness < 0
+                || pipelineInnerDiameter < 0)
+                throw new ArgumentOutOfRangeException();
+
+            this.reynoldsNumber = reynoldsNumber ?? throw new ArgumentNullException();
 
             if (IsLaminarFlow())
                 val = CalcLaminarFlowReynoldsNumber();
@@ -30,7 +34,7 @@ namespace calc_pressure_losses_along_len.Physics
             else if (IsTurbulentFlow())
                 val = CalcTurbulentFlowReynoldsNumber(equivalentRoughness, pipelineInnerDiameter);
             else
-                throw new ArgumentException();
+                throw new ArgumentOutOfRangeException();
         }
 
         private double CalcLaminarFlowReynoldsNumber()

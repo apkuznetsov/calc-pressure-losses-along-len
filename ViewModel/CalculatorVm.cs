@@ -1,5 +1,6 @@
 ﻿using calc_pressure_losses_along_len.Commands;
 using calc_pressure_losses_along_len.Physics;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -36,15 +37,22 @@ namespace calc_pressure_losses_along_len.ViewModel
 
         private void CalcPressureLoss(object obj)
         {
-            PressureLossCalculation pressureLossCalculation = new PressureLossCalculation(
-                PipelineFluidFlow,
-                PipelineInnerDiameter,
-                KinematicViscosityCoefficient,
-                EquivalentRoughness,
-                PipelineLength,
-                FluidDensity);
+            try
+            {
+                PressureLossCalculation pressureLossCalculation = new PressureLossCalculation(
+                    PipelineFluidFlow,
+                    PipelineInnerDiameter,
+                    KinematicViscosityCoefficient,
+                    EquivalentRoughness,
+                    PipelineLength,
+                    FluidDensity);
 
-            MessageBox.Show(pressureLossCalculation.ToString());
+                MessageBox.Show(pressureLossCalculation.ToString());
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Значения параметров должны быть больше нуля");
+            }
         }
 
         public double PipelineFluidFlow

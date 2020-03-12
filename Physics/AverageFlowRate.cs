@@ -8,6 +8,10 @@ namespace calc_pressure_losses_along_len.Physics
 
         public AverageFlowRate(double pipelineFluidFlow, double pipelineInnerDiameter)
         {
+            if (pipelineFluidFlow < 0
+                || pipelineInnerDiameter < 0)
+                throw new ArgumentOutOfRangeException();
+
             double flowSectionArea = Math.PI * Math.Pow(pipelineInnerDiameter, 2) / 2;
 
             val = pipelineFluidFlow / flowSectionArea;

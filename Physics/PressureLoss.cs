@@ -13,6 +13,14 @@ namespace calc_pressure_losses_along_len.Physics
             AverageFlowRate averageFlowRate,
             double fluidDensity)
         {
+            if (hydraulicFrictionCoefficient == null
+                || averageFlowRate == null)
+                throw new ArgumentNullException();
+            if (pipelineLength < 0
+                || pipelineInnerDiameter < 0
+                || fluidDensity < 0)
+                throw new ArgumentOutOfRangeException();
+
             val =
                 hydraulicFrictionCoefficient.Value *
                 (pipelineLength / pipelineInnerDiameter) *

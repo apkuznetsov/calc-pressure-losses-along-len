@@ -1,4 +1,6 @@
-﻿namespace calc_pressure_losses_along_len.Physics
+﻿using System;
+
+namespace calc_pressure_losses_along_len.Physics
 {
     public class PressureLossCalculation
     {
@@ -16,6 +18,14 @@
             double pipelineLength,
             double fluidDensity)
         {
+            if (pipelineFluidFlow < 0
+                || pipelineInnerDiameter < 0
+                || kinematicViscosityCoefficient < 0
+                || equivalentRoughness < 0
+                || pipelineLength < 0
+                || fluidDensity < 0)
+                throw new ArgumentOutOfRangeException();
+
             averageFlowRate = new AverageFlowRate(pipelineFluidFlow, pipelineInnerDiameter);
             reynoldsNumber = new ReynoldsNumber(averageFlowRate, pipelineInnerDiameter, kinematicViscosityCoefficient);
             hydraulicFrictionCoefficient = new HydraulicFrictionCoefficient(reynoldsNumber, equivalentRoughness, pipelineInnerDiameter);
