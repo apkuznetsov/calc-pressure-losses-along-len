@@ -14,21 +14,21 @@ namespace calc_pressure_losses_along_len.Physics
             double pipelineFluidFlow,
             double pipelineInnerDiameter,
             double kinematicViscosityCoefficient,
-            double equivalentRoughness,
+            double equivalentPipeRoughness,
             double pipelineLength,
             double fluidDensity)
         {
             if (pipelineFluidFlow < 0
                 || pipelineInnerDiameter < 0
                 || kinematicViscosityCoefficient < 0
-                || equivalentRoughness < 0
+                || equivalentPipeRoughness < 0
                 || pipelineLength < 0
                 || fluidDensity < 0)
                 throw new ArgumentOutOfRangeException();
 
             averageFlowRate = new AverageFlowRate(pipelineFluidFlow, pipelineInnerDiameter);
             reynoldsNumber = new ReynoldsNumber(averageFlowRate, pipelineInnerDiameter, kinematicViscosityCoefficient);
-            hydraulicFrictionCoefficient = new HydraulicFrictionCoefficient(reynoldsNumber, equivalentRoughness, pipelineInnerDiameter);
+            hydraulicFrictionCoefficient = new HydraulicFrictionCoefficient(reynoldsNumber, equivalentPipeRoughness, pipelineInnerDiameter);
 
             pressureLoss = new PressureLoss(hydraulicFrictionCoefficient, pipelineLength, pipelineInnerDiameter, averageFlowRate, fluidDensity);
         }

@@ -18,10 +18,10 @@ namespace calc_pressure_losses_along_len.Physics
 
         public HydraulicFrictionCoefficient(
             ReynoldsNumber reynoldsNumber,
-            double equivalentRoughness,
+            double equivalentPipeRoughness,
             double pipelineInnerDiameter)
         {
-            if (equivalentRoughness < 0
+            if (equivalentPipeRoughness < 0
                 || pipelineInnerDiameter < 0)
                 throw new ArgumentOutOfRangeException();
 
@@ -30,9 +30,9 @@ namespace calc_pressure_losses_along_len.Physics
             if (IsLaminarFlow())
                 val = CalcLaminarFlowReynoldsNumber();
             else if (IsTransientFlow())
-                val = CalcTransientFlow(equivalentRoughness, pipelineInnerDiameter);
+                val = CalcTransientFlow(equivalentPipeRoughness, pipelineInnerDiameter);
             else if (IsTurbulentFlow())
-                val = CalcTurbulentFlowReynoldsNumber(equivalentRoughness, pipelineInnerDiameter);
+                val = CalcTurbulentFlowReynoldsNumber(equivalentPipeRoughness, pipelineInnerDiameter);
             else
                 throw new ArgumentOutOfRangeException();
         }
