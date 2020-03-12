@@ -30,7 +30,7 @@ namespace calc_pressure_losses_along_len.Physics
 
         public override string ToString()
         {
-            return "потери давления = " + Value;
+            return "потери давления = " + Value + " Па";
         }
     }
 }

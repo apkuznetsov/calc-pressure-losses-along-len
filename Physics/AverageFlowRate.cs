@@ -23,7 +23,7 @@ namespace calc_pressure_losses_along_len.Physics
 
         public override string ToString()
         {
-            return "средняя скорость потока = " + Value;
+            return "средняя скорость потока = " + Value + " куб.м/с";
         }
     }
 }

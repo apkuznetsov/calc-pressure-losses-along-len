@@ -26,9 +26,9 @@
         public override string ToString()
         {
             return
-                averageFlowRate + "\n" +
-                reynoldsNumber + "\n" +
-                hydraulicFrictionCoefficient + "\n" +
+                averageFlowRate + "\n\n" +
+                reynoldsNumber + "\n\n" +
+                hydraulicFrictionCoefficient + "\n\n" +
                 pressureLoss + "\n";
         }
     }
