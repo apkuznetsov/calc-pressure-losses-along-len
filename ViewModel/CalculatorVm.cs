@@ -1,15 +1,52 @@
-﻿using System.ComponentModel;
+﻿using calc_pressure_losses_along_len.Commands;
+using calc_pressure_losses_along_len.Physics;
+using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows;
+using System.Windows.Input;
 
 namespace calc_pressure_losses_along_len.ViewModel
 {
     public class CalculatorVm : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private double pipelineFluidFlow;
         private double pipelineInnerDiameter;
         private double kinematicViscosityCoefficient;
         private double equivalentRoughness;
         private double pipelineLength;
         private double fluidDensity;
+
+        public CalculatorVm()
+        {
+            CalcCommand = new DelegateCommand(CalcPressureLoss);
+        }
+
+        public ICommand CalcCommand
+        {
+            get; private set;
+        }
+
+        public void OnPropertyChanged([CallerMemberName]string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
+
+        private void CalcPressureLoss(object obj)
+        {
+            double res = Calculations.CalcPressureLoss(
+                PipelineFluidFlow,
+                PipelineInnerDiameter,
+                KinematicViscosityCoefficient,
+                EquivalentRoughness,
+                PipelineLength,
+                FluidDensity);
+
+            MessageBox.Show(res.ToString());
+        }
 
         public double PipelineFluidFlow
         {
@@ -93,14 +130,6 @@ namespace calc_pressure_losses_along_len.ViewModel
                 fluidDensity = value;
                 OnPropertyChanged(nameof(FluidDensity));
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
