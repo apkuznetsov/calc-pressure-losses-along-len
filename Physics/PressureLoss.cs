@@ -27,5 +27,10 @@ namespace calc_pressure_losses_along_len.Physics
                 return val;
             }
         }
+
+        public override string ToString()
+        {
+            return "потери давления = " + Value;
+        }
     }
 }

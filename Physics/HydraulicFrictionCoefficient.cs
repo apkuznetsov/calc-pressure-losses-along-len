@@ -86,5 +86,28 @@ namespace calc_pressure_losses_along_len.Physics
         {
             return ReynoldsNumber >= MinReynoldsNumberForTurbulenFlow;
         }
+
+        public override string ToString()
+        {
+            string flowModeName = "(" + GetFlowModeName() + ")";
+
+            return "коэффициент гидравлического трения " + flowModeName + " = " + Value;
+        }
+
+        private string GetFlowModeName()
+        {
+            string flowModeName;
+
+            if (IsLaminarFlow())
+                flowModeName = "ламинарное течение";
+            else if (IsTransientFlow())
+                flowModeName = "переходное течение";
+            else if (IsTurbulentFlow())
+                flowModeName = "турбулентное течение";
+            else
+                flowModeName = null;
+
+            return flowModeName;
+        }
     }
 }

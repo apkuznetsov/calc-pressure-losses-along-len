@@ -19,9 +19,17 @@
             averageFlowRate = new AverageFlowRate(pipelineFluidFlow, pipelineInnerDiameter);
             reynoldsNumber = new ReynoldsNumber(averageFlowRate, pipelineInnerDiameter, kinematicViscosityCoefficient);
             hydraulicFrictionCoefficient = new HydraulicFrictionCoefficient(reynoldsNumber, equivalentRoughness, pipelineInnerDiameter);
-        
+
             pressureLoss = new PressureLoss(hydraulicFrictionCoefficient, pipelineLength, pipelineInnerDiameter, averageFlowRate, fluidDensity);
+        }
+
+        public override string ToString()
+        {
+            return
+                averageFlowRate + "\n" +
+                reynoldsNumber + "\n" +
+                hydraulicFrictionCoefficient + "\n" +
+                pressureLoss + "\n";
         }
     }
 }
-

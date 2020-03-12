@@ -21,5 +21,10 @@
                 return val;
             }
         }
+
+        public override string ToString()
+        {
+            return "число Рейнольдса = " + Value;
+        }
     }
 }
