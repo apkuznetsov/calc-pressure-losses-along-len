@@ -82,6 +82,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Db\ApplicationContext.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="Db\Dtos\EquivalentPipeRoughness.cs" />
     <Compile Include="Db\Dtos\KinematicViscosityCoefficients.cs" />
