@@ -83,8 +83,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DelegateCommand.cs" />
-    <Compile Include="Dtos\EquivalentPipeRoughness.cs" />
-    <Compile Include="Dtos\KinematicViscosityCoefficients.cs" />
+    <Compile Include="Db\Dtos\EquivalentPipeRoughness.cs" />
+    <Compile Include="Db\Dtos\KinematicViscosityCoefficients.cs" />
     <Compile Include="Physics\PressureLossCalculation.cs" />
     <Compile Include="ViewModel\CalculatorVm.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
