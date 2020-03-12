@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using calc_pressure_losses_along_len.ViewModel;
+using System.Windows;
 
 namespace calc_pressure_losses_along_len.View
 {
@@ -7,6 +8,7 @@ namespace calc_pressure_losses_along_len.View
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new CalculatorVm();
         }
     }
 }

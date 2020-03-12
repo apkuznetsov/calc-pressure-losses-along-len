@@ -2,7 +2,7 @@
 
 namespace calc_pressure_losses_along_len.ViewModel
 {
-    public class Calculator : INotifyPropertyChanged
+    public class CalculatorVm : INotifyPropertyChanged
     {
         private double pipelineFluidFlow;
         private double pipelineInnerDiameter;
