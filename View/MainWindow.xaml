@@ -74,7 +74,8 @@
                 VerticalAlignment="Bottom"
                 Height="Auto" 
                 Margin="20" 
-                Content="Рассчитать" />
+                Content="Рассчитать"
+                Command="{Binding Path=CalcCommand}" />
 
     </Grid>
 </Window>
