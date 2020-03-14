@@ -109,6 +109,7 @@
     <Compile Include="Db\Dtos\KinematicViscosityCoefficient.cs" />
     <Compile Include="Physics\PressureLossCalculation.cs" />
     <Compile Include="ViewModel\CalculatorVm.cs" />
+    <Compile Include="ViewModel\EprVm.cs" />
     <Compile Include="View\Epr\EprDialog.xaml.cs">
       <DependentUpon>EprDialog.xaml</DependentUpon>
     </Compile>
