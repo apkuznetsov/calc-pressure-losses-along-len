@@ -35,11 +35,13 @@
 
             <Button Content="Изменить" 
                     Margin="10" 
-                    Command="{Binding EditEprCommand}" />
+                    Command="{Binding EditEprCommand}" 
+                    CommandParameter="{Binding ElementName=eprsList, Path=SelectedItem}" />
 
             <Button Content="Удалить" 
                     Margin="10" 
-                    Command="{Binding DeleteEprCommand}" />
+                    Command="{Binding DeleteEprCommand}" 
+                    CommandParameter="{Binding ElementName=eprsList, Path=SelectedItem}" />
         </StackPanel>
     </Grid>
 </Window>

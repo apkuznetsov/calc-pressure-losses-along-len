@@ -35,11 +35,13 @@
 
             <Button Content="Добавить" 
                     Margin="10" 
-                    Command="{Binding AddKvcCommand}" />
+                    Command="{Binding AddKvcCommand}" 
+                    CommandParameter="{Binding ElementName=kvcsList, Path=SelectedItem}" />
 
             <Button Content="Изменить" 
                     Margin="10" 
-                    Command="{Binding EditKvcCommand}" />
+                    Command="{Binding EditKvcCommand}" 
+                    CommandParameter="{Binding ElementName=kvcsList, Path=SelectedItem}" />
 
             <Button Content="Удалить" 
                     Margin="10" 
