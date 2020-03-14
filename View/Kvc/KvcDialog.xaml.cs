@@ -1,7 +1,7 @@
 ﻿using calc_pressure_losses_along_len.Dtos;
 using System.Windows;
 
-namespace calc_pressure_losses_along_len.View
+namespace calc_pressure_losses_along_len.View.Kvc
 {
     public partial class KvcDialog : Window
     {
