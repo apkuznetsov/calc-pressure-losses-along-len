@@ -1,0 +1,49 @@
+﻿<Window x:Class="calc_pressure_losses_along_len.View.EprWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:calc_pressure_losses_along_len.View"
+        mc:Ignorable="d"
+        Title="Список кинематических коэффициентов вязкости" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <ListBox x:Name="kvcsList" 
+                 ItemsSource="{Binding}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding SubstanceName}" FontSize="16" />
+                        <TextBlock Text="{Binding ValueAt0Celsius}" FontSize="12" />
+                        <TextBlock Text="{Binding ValueAt20Celsius}" FontSize="12" />
+                        <TextBlock Text="{Binding ValueAt50Celsius}" FontSize="12" />
+                        <TextBlock Text="{Binding ValueAt70Celsius}" FontSize="12" />
+                        <TextBlock Text="{Binding ValueAt100Celsius}" FontSize="12" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel Grid.Row="1" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Center">
+
+            <Button Content="Добавить" 
+                    Margin="10" 
+                    Click="AddKvc_Click" />
+
+            <Button Content="Изменить" 
+                    Margin="10" 
+                    Click="EditKvc_Click"  />
+
+            <Button Content="Удалить" 
+                    Margin="10" 
+                    Click="DeleteKvc_Click"  />
+        </StackPanel>
+    </Grid>
+</Window>
