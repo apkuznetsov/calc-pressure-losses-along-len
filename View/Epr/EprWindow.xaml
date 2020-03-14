@@ -19,7 +19,10 @@
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock Text="{Binding PipeName}" FontSize="16" />
-                        <TextBlock Text="{Binding RoughnessValue}" FontSize="12" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding RoughnessValue}" FontSize="12" />
+                            <TextBlock Text=" м" FontSize="12" />
+                        </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

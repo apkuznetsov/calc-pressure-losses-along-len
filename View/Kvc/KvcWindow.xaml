@@ -19,11 +19,31 @@
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock Text="{Binding SubstanceName}" FontSize="16" />
-                        <TextBlock Text="{Binding ValueAt0Celsius}" FontSize="12" />
-                        <TextBlock Text="{Binding ValueAt20Celsius}" FontSize="12" />
-                        <TextBlock Text="{Binding ValueAt50Celsius}" FontSize="12" />
-                        <TextBlock Text="{Binding ValueAt70Celsius}" FontSize="12" />
-                        <TextBlock Text="{Binding ValueAt100Celsius}" FontSize="12" />
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="при  0 град. Ц., кв.м/с: " FontSize="12" />
+                            <TextBlock Text="{Binding ValueAt0Celsius}" FontSize="12" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="при 20 град. Ц., кв.м/с: " FontSize="12" />
+                            <TextBlock Text="{Binding ValueAt20Celsius}" FontSize="12" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="при 50 град. Ц., кв.м/с: " FontSize="12" />
+                            <TextBlock Text="{Binding ValueAt50Celsius}" FontSize="12" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="при 50 град. Ц., кв.м/с: " FontSize="12" />
+                            <TextBlock Text="{Binding ValueAt70Celsius}" FontSize="12" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="при 50 град. Ц., кв.м/с: " FontSize="12" />
+                            <TextBlock Text="{Binding ValueAt100Celsius}" FontSize="12" />
+                        </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -45,7 +65,8 @@
 
             <Button Content="Удалить" 
                     Margin="10" 
-                    Command="{Binding DeleteKvcCommand}" />
+                    Command="{Binding DeleteKvcCommand}"
+                    CommandParameter="{Binding ElementName=kvcsList, Path=SelectedItem}" />
         </StackPanel>
     </Grid>
 </Window>
