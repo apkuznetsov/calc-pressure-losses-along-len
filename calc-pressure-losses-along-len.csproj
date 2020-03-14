@@ -79,7 +79,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\EquivalentPipeRoughnessWindow.xaml">
+    <Page Include="View\EprDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -97,8 +97,8 @@
     <Compile Include="Db\Dtos\KinematicViscosityCoefficients.cs" />
     <Compile Include="Physics\PressureLossCalculation.cs" />
     <Compile Include="ViewModel\CalculatorVm.cs" />
-    <Compile Include="View\EquivalentPipeRoughnessWindow.xaml.cs">
-      <DependentUpon>EquivalentPipeRoughnessWindow.xaml</DependentUpon>
+    <Compile Include="View\EprDialog.xaml.cs">
+      <DependentUpon>EprDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
