@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace calc_pressure_losses_along_len.Dtos
 {
-    public class KinematicViscosityCoefficients : INotifyPropertyChanged
+    public class KinematicViscosityCoefficient : INotifyPropertyChanged
     {
         private string substanceName;
         private double valueAt0Celsius;
