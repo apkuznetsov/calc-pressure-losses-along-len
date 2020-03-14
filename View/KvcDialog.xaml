@@ -1,0 +1,101 @@
+﻿<Window x:Class="calc_pressure_losses_along_len.View.EprDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:calc_pressure_losses_along_len.View"
+        mc:Ignorable="d"
+        Title="Диалоговое окно" Height="400" Width="300">
+
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" 
+                    Value="8" />
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" 
+                    Value="8" />
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="0,0,0,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="50" />
+            <RowDefinition Height ="50" />
+            <RowDefinition Height ="50" />
+            <RowDefinition Height ="50" />
+            <RowDefinition Height ="50" />
+            <RowDefinition Height ="50"/>
+            <RowDefinition Height ="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Вещество" 
+                   Grid.Row="0"
+                   Grid.Column="0" />
+
+        <TextBlock Text="При 0 град. Ц." 
+                   Grid.Row="1"
+                   Grid.Column="0" />
+
+        <TextBlock Text="При 20 град. Ц." 
+                   Grid.Row="2"
+                   Grid.Column="0" />
+
+        <TextBlock Text="При 50 град. Ц." 
+                   Grid.Row="3"
+                   Grid.Column="0" />
+
+        <TextBlock Text="При 70 град. Ц." 
+                   Grid.Row="4"
+                   Grid.Column="0" />
+
+        <TextBlock Text="При 100 град. Ц." 
+                   Grid.Row="5"
+                   Grid.Column="0" />
+
+        <TextBox Text="{Binding SubstanceName}" 
+                 Grid.Row="0"
+                 Grid.Column="1" />
+
+        <TextBox Text="{Binding ValueAt0Celsius}" 
+                 Grid.Row="1"
+                 Grid.Column="1" />
+
+        <TextBox Text="{Binding ValueAt20Celsius}" 
+                 Grid.Row="2"
+                 Grid.Column="1" />
+
+        <TextBox Text="{Binding ValueAt50Celsius}" 
+                 Grid.Row="3"
+                 Grid.Column="1" />
+
+        <TextBox Text="{Binding ValueAt70Celsius}" 
+                 Grid.Row="4"
+                 Grid.Column="1" />
+
+        <TextBox Text="{Binding ValueAt100Celsius}" 
+                 Grid.Row="5"
+                 Grid.Column="1" />
+
+        <StackPanel HorizontalAlignment="Center" 
+                    Orientation="Horizontal" 
+                    Grid.Row="6" 
+                    Grid.Column="1">
+
+            <Button IsDefault="True" 
+                    Click="Click_Ok" 
+                    MinWidth="60" 
+                    Margin="5">ОК</Button>
+
+            <Button IsCancel="True" 
+                    MinWidth="60" 
+                    Margin="5">Отмена</Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -9,6 +9,6 @@ namespace calc_pressure_losses_along_len.Db
 
         public DbSet<EquivalentPipeRoughness> Eprs { get; set; }
 
-        public DbSet<KinematicViscosityCoefficients> Kvcs { get; set; }
+        public DbSet<KinematicViscosityCoefficient> Kvcs { get; set; }
     }
 }
