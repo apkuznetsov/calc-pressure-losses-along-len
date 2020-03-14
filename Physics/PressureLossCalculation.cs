@@ -33,6 +33,23 @@ namespace calc_pressure_losses_along_len.Physics
             pressureLoss = new PressureLoss(hydraulicFrictionCoefficient, pipelineLength, pipelineInnerDiameter, averageFlowRate, fluidDensity);
         }
 
+        public static string GetCalculationInfo(
+            double pipelineFluidFlow,
+            double pipelineInnerDiameter,
+            double kinematicViscosityCoefficient,
+            double equivalentRoughness,
+            double pipelineLength,
+            double fluidDensity)
+        {
+            return new PressureLossCalculation(
+                pipelineFluidFlow,
+                pipelineInnerDiameter,
+                kinematicViscosityCoefficient,
+                equivalentRoughness,
+                pipelineLength,
+                fluidDensity).ToString();
+        }
+
         public override string ToString()
         {
             return
