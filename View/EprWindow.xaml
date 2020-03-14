@@ -31,15 +31,15 @@
 
             <Button Content="Добавить" 
                     Margin="10" 
-                    Click="Add_Click" />
+                    Click="AddEpr_Click" />
 
             <Button Content="Изменить" 
                     Margin="10" 
-                    Click="Edit_Click"  />
+                    Click="EditEpr_Click"  />
 
             <Button Content="Удалить" 
                     Margin="10" 
-                    Click="Delete_Click"  />
+                    Click="DeleteEpr_Click"  />
         </StackPanel>
     </Grid>
 </Window>
