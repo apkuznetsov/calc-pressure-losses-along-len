@@ -7,8 +7,8 @@ namespace calc_pressure_losses_along_len.Db
     {
         public ApplicationContext() : base("DefaultConnection") { }
 
-        public DbSet<EquivalentPipeRoughness> Roughness { get; set; }
+        public DbSet<EquivalentPipeRoughness> Eprs { get; set; }
 
-        public DbSet<KinematicViscosityCoefficients> Coefficients { get; set; }
+        public DbSet<KinematicViscosityCoefficients> Kvcs { get; set; }
     }
 }
