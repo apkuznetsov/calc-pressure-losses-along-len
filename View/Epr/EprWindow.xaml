@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:calc_pressure_losses_along_len.View"
         mc:Ignorable="d"
-        Title="EprWindow" Height="450" Width="800">
+        Title="Эквивалентная шероховатость трубы" Height="450" Width="800">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <ListBox x:Name="eprsList" 
-                 ItemsSource="{Binding}">
+                 ItemsSource="{Binding Eprs}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -31,15 +31,15 @@
 
             <Button Content="Добавить" 
                     Margin="10" 
-                    Click="AddEpr_Click" />
+                    Command="{Binding AddEprCommand}" />
 
             <Button Content="Изменить" 
                     Margin="10" 
-                    Click="EditEpr_Click"  />
+                    Command="{Binding EditEprCommand}" />
 
             <Button Content="Удалить" 
                     Margin="10" 
-                    Click="DeleteEpr_Click"  />
+                    Command="{Binding DeleteEprCommand}" />
         </StackPanel>
     </Grid>
 </Window>
