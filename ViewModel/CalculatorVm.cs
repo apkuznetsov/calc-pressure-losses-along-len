@@ -1,4 +1,6 @@
 ﻿using calc_pressure_losses_along_len.Physics;
+using calc_pressure_losses_along_len.View.Epr;
+using calc_pressure_losses_along_len.View.Kvc;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -21,9 +23,21 @@ namespace calc_pressure_losses_along_len.ViewModel
         public CalculatorVm()
         {
             CalcCommand = new DelegateCommand(CalcPressureLoss);
+            OpenEprWindowCommand = new DelegateCommand(OpenEprWindow);
+            OpenKvcWindowCommand = new DelegateCommand(OpenKvcWindow);
         }
 
         public ICommand CalcCommand
+        {
+            get; private set;
+        }
+
+        public ICommand OpenEprWindowCommand
+        {
+            get; private set;
+        }
+
+        public ICommand OpenKvcWindowCommand
         {
             get; private set;
         }
@@ -52,6 +66,16 @@ namespace calc_pressure_losses_along_len.ViewModel
             {
                 MessageBox.Show("Значения параметров должны быть больше нуля");
             }
+        }
+
+        private void OpenEprWindow(object obj)
+        {
+            new EprWindow().Show();
+        }
+
+        private void OpenKvcWindow(object obj)
+        {
+            new KvcWindow().Show();
         }
 
         public double PipelineFluidFlow
