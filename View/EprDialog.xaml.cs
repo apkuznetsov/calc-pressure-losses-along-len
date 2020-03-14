@@ -3,11 +3,11 @@ using System.Windows;
 
 namespace calc_pressure_losses_along_len.View
 {
-    public partial class EquivalentPipeRoughnessWindow : Window
+    public partial class EprDialog : Window
     {
-        private EquivalentPipeRoughness EquivalentPipeRoughness { get; set; }
+        public EquivalentPipeRoughness EquivalentPipeRoughness { get; set; }
 
-        public EquivalentPipeRoughnessWindow(EquivalentPipeRoughness epr)
+        public EprDialog(EquivalentPipeRoughness epr)
         {
             InitializeComponent();
 
