@@ -104,7 +104,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Db\ApplicationContext.cs" />
-    <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="DelegateCommand.cs" />
     <Compile Include="Db\Dtos\EquivalentPipeRoughness.cs" />
     <Compile Include="Db\Dtos\KinematicViscosityCoefficient.cs" />
     <Compile Include="Physics\PressureLossCalculation.cs" />
