@@ -9,6 +9,18 @@
 
     <Grid>
         <StackPanel>
+            <Menu Height="25" 
+                  VerticalAlignment="Top">
+
+                <MenuItem Header="Справка">
+                    <MenuItem Header="Шерховатость"
+                              Command="{Binding Path=OpenEprWindowCommand}"></MenuItem>
+
+                    <MenuItem Header="Вязкость"
+                              Command="{Binding Path=OpenKvcWindowCommand}"></MenuItem>
+                </MenuItem>
+            </Menu>
+
             <Label x:Name="labelPipelineInnerDiameter" 
                    Margin="15, 0, 0, 0"
                    Content="Внутренний диаметр трубопровода, м:" />
