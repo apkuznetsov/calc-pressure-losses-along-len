@@ -3,7 +3,7 @@ using calc_pressure_losses_along_len.Dtos;
 using System.Data.Entity;
 using System.Windows;
 
-namespace calc_pressure_losses_along_len.View
+namespace calc_pressure_losses_along_len.View.Epr
 {
     public partial class EprWindow : Window
     {

@@ -79,19 +79,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\KvcDialog.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\EprDialog.xaml">
+    <Page Include="View\Epr\EprDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\KvcWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="View\Epr\EprWindow.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\EprWindow.xaml">
+    <Page Include="View\Kvc\KvcDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Kvc\KvcWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -109,17 +109,17 @@
     <Compile Include="Db\Dtos\KinematicViscosityCoefficient.cs" />
     <Compile Include="Physics\PressureLossCalculation.cs" />
     <Compile Include="ViewModel\CalculatorVm.cs" />
-    <Compile Include="View\KvcDialog.xaml.cs">
-      <DependentUpon>KvcDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\EprDialog.xaml.cs">
+    <Compile Include="View\Epr\EprDialog.xaml.cs">
       <DependentUpon>EprDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\KvcWindow.xaml.cs">
-      <DependentUpon>KvcWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\EprWindow.xaml.cs">
+    <Compile Include="View\Epr\EprWindow.xaml.cs">
       <DependentUpon>EprWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Kvc\KvcDialog.xaml.cs">
+      <DependentUpon>KvcDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Kvc\KvcWindow.xaml.cs">
+      <DependentUpon>KvcWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -171,6 +171,7 @@
     <Analyzer Include="packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
     <Analyzer Include="packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
