@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <ListBox x:Name="kvcsList" 
-                 ItemsSource="{Binding}">
+                 ItemsSource="{Binding Kvcs}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -35,15 +35,15 @@
 
             <Button Content="Добавить" 
                     Margin="10" 
-                    Click="AddKvc_Click" />
+                    Command="{Binding AddKvcCommand}" />
 
             <Button Content="Изменить" 
                     Margin="10" 
-                    Click="EditKvc_Click"  />
+                    Command="{Binding EditKvcCommand}" />
 
             <Button Content="Удалить" 
                     Margin="10" 
-                    Click="DeleteKvc_Click"  />
+                    Command="{Binding DeleteKvcCommand}" />
         </StackPanel>
     </Grid>
 </Window>
