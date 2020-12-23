@@ -1,5 +1,7 @@
 # Калькулятор по расчёту потерь давления в трубопроводе
 
+<img src="https://raw.githubusercontent.com/apkuznetsov/calc-pressure-losses-along-len/master/README/screenshot.png">
+
 Исходными данными для расчёта является:
 * внутренний диаметр трубопровода; 
 * длина трубопровода;
